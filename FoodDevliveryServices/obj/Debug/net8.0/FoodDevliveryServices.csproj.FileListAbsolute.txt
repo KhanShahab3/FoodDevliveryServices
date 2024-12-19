@@ -143,3 +143,4 @@ D:\FoodDeliveryApp\FoodDevliveryServices\FoodDevliveryServices\obj\Debug\net8.0\
 D:\FoodDeliveryApp\FoodDevliveryServices\FoodDevliveryServices\obj\Debug\net8.0\FoodDevliveryServices.pdb
 D:\FoodDeliveryApp\FoodDevliveryServices\FoodDevliveryServices\obj\Debug\net8.0\FoodDevliveryServices.genruntimeconfig.cache
 D:\FoodDeliveryApp\FoodDevliveryServices\FoodDevliveryServices\obj\Debug\net8.0\ref\FoodDevliveryServices.dll
+D:\FoodDeliveryApp\FoodDevliveryServices\FoodDevliveryServices\obj\Debug\net8.0\FoodDevliveryServices.sourcelink.json

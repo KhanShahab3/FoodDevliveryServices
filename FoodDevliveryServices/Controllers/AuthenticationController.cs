@@ -24,6 +24,7 @@ namespace FoodDevliveryServices.Controllers
         public async Task<IActionResult> LoginDriver(LogInDTO request)
         {
             var token = await _authenticationService.LoginDriverAsync(request);
+           
             return Ok(new { Token = token });
         }
     }

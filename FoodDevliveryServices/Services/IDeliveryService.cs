@@ -6,7 +6,7 @@ namespace FoodDevliveryServices.Services
     public interface IDeliveryService
     {
         Task AddDelivery(CreateDeliveryDto deliveryDto);
-        Task<List<Delivery>> GetDeliveryList(); 
+        Task<List<DeliveryDTO>> GetDeliveryList(); 
         Task DeleteDelivery(int id);
         Task UpdateDelivery(UpdateDeliveryDto deliveryDto, int id);
         Task<Delivery> GetDeliveryById(int id);

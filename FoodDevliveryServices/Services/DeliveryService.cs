@@ -29,16 +29,38 @@ namespace FoodDevliveryServices.Services
             _appDbContext.Deliveries.Add(delivery);
             await _appDbContext.SaveChangesAsync();
         }
-        public async Task<List<Delivery>> GetDeliveryList()
+        public async Task<List<DeliveryDTO>> GetDeliveryList()
         {
-            var deliveries = await _appDbContext.Deliveries
-      .Include(d => d.DeliveryRoutes)   
-      .Include(d => d.Shop)             
-      .Include(d => d.DeliveryNote)     
-      .ToListAsync();  
+          var deliveries = await _appDbContext.Deliveries
+             .Include(d => d.DeliveryRoutes)   
+              .Include(d => d.Shop)             
+               .Include(d => d.DeliveryNote)
+           .Select(d => new DeliveryDTO
+           {
+               Id = d.Id,
+               DeliveryDate = d.DeliveryDate,
+               Status = d.Status,
+               DeliveryRoute = new DeliveryRouteFetchDto
+               {
+                   Id = d.DeliveryRoutes.Id,
+                   RouteName = d.DeliveryRoutes.RouteName,
+                   StartingPoint = d.DeliveryRoutes.StartingPoint,
+                   EndPoint = d.DeliveryRoutes.EndPoint
+               },
+               Shop = new ShopDto
+                    {
+                        Id = d.Shop.Id,
+                        Name = d.Shop.Name,
+                        Address = d.Shop.Address,
+                        ContactInfo = d.Shop.ContactInfo
+                    }
+                })
+
+      .ToListAsync();
 
             return deliveries;
         }
+       
      public async Task UpdateDelivery(UpdateDeliveryDto deliveryDto, int id)
 {
     // Find the existing delivery by ID

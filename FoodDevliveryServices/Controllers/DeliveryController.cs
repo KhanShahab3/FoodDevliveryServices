@@ -16,11 +16,11 @@ namespace FoodDevliveryServices.Controllers
             _delivery = delivery;
         }
         [HttpGet]
-        public async Task<ActionResult<List<Delivery>>> GetAllDeliveries()
+        public async Task<ActionResult<List<DeliveryDTO>>> GetAllDeliveries()
         {
             var deliveries = await _delivery.GetDeliveryList();
             if (deliveries.Count == 0)
-                return new List<Delivery>();
+                return new List<DeliveryDTO>();
             return Ok(deliveries);
         }
         [HttpGet("{id}")]
