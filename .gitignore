@@ -1,0 +1,6 @@
+
+*.v2
+*.config
+*.vsidx
+*.bin
+.vs/FoodDevliveryServices/v17/.suo
